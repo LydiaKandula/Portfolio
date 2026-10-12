@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Lydia Kandula, a Computer Science student building AI-powered full-stack applications.">
+  <title>Lydia Kandula | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Runs before first paint: theme + "js" flag (so content stays visible if JS is off) */
+    document.documentElement.classList.add("js");
+    try {
+      const saved = localStorage.getItem("theme");
+      const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", saved || (dark ? "dark" : "light"));
+    } catch (e) { /* storage unavailable: keep default */ }
+  </script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header>
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand brand" href="#home" aria-label="Lydia Kandula, home">L<em>K</em><span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
+                aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#achievements">Certifications</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item ms-lg-2">
+              <button id="themeToggle" class="btn btn-sm btn-outline-theme" type="button" aria-pressed="false"
+                      aria-label="Switch to dark theme">
+                <span id="themeIcon" aria-hidden="true">&#9790;</span>
+                <span id="themeLabel">Dark</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HOME ============ -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="row align-items-center gy-5 gx-lg-5">
+          <div class="col-lg-7 order-2 order-lg-1" data-reveal>
+            <p class="eyebrow">Computer Science student</p>
+            <h1 id="hero-title" class="hero-title">Hi, I'm <em>Lydia</em><br>Kandula.</h1>
+            <p class="hero-role">
+              I build <span id="typedRole" class="typed" aria-live="off">AI-powered apps</span><span class="caret" aria-hidden="true"></span>
+            </p>
+            <p class="lead hero-copy">
+              Two internships, five projects and a lot of curiosity. I work across Python, FastAPI, React
+              and PostgreSQL, with a growing focus on LLMs and data science.
+            </p>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <a href="#projects" class="btn btn-accent btn-lg">See my projects</a>
+              <a href="#contact" class="btn btn-outline-theme btn-lg">Say hello</a>
+            </div>
+            <ul class="facts list-unstyled mb-0">
+              <li><strong data-count="2">0</strong><span>Internships</span></li>
+              <li><strong data-count="5">0</strong><span>Projects</span></li>
+              <li><strong id="certCountHero" data-count="12">0</strong><span>Certifications</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2" data-reveal>
+            <figure class="polaroid" id="polaroid">
+              <div class="photo-frame">
+                <span class="photo-fallback" aria-hidden="true">LK</span>
+                <!-- Add your photo as images/lydia.jpg. Until then the initials show. -->
+                <img src="images/lydia.jpg" alt="Portrait of Lydia Kandula" width="400" height="460" onerror="this.remove()">
+              </div>
+              <figcaption>Lydia &middot; B.E. CSE &rsquo;27</figcaption>
+              <span class="sticky-note" aria-hidden="true">Open to<br>internships</span>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About"><span></span></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Who I am</p>
+          <h2 id="about-title" class="section-title">About <em>me</em></h2>
+        </header>
+        <div class="row gy-5 gx-lg-5">
+          <div class="col-lg-6" data-reveal>
+            <div class="note-card">
+              <p>
+                I'm a detail-oriented Computer Science student who likes turning a vague problem into
+                something that works end to end. Across two software internships I've built AI-powered
+                applications, worked on LLM integration and prompt engineering, and used React, FastAPI
+                and PostgreSQL together.
+              </p>
+              <p>
+                My strengths are analytical thinking, careful debugging and clear documentation. I'm keen
+                to apply AI and data science to real-world challenges and to keep growing as a software engineer.
+              </p>
+              <ul class="tag-list list-unstyled mb-0">
+                <li>Problem-solving</li><li>Debugging</li><li>Teamwork</li><li>Documentation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6" data-reveal>
+            <h3 class="h5 mb-3">Experience</h3>
+            <ol class="timeline list-unstyled">
+              <li>
+                <time datetime="2026-04">Apr 2026 &ndash; Jun 2026</time>
+                <h4>Software Development Intern</h4>
+                <p class="org">Purview India Consulting and Services LLP</p>
+                <p>Contributed to an AI-powered Loan Recommendation Agent: Groq LLM integration, role-based
+                   prompt engineering, and the FastAPI + React.js + PostgreSQL workflow.</p>
+              </li>
+              <li>
+                <time datetime="2025-05">May 2025 &ndash; Jun 2025</time>
+                <h4>Artificial Intelligence Intern</h4>
+                <p class="org">CodSoft</p>
+                <p>Developed three Python AI projects using TF-IDF, cosine similarity, content-based
+                   filtering and Minimax.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section alt" aria-labelledby="edu-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Where I've studied</p>
+          <h2 id="edu-title" class="section-title">My learning <em>path</em></h2>
+        </header>
+        <div class="table-responsive" data-reveal>
+          <table class="table edu-table align-middle">
+            <caption class="visually-hidden">Academic qualifications</caption>
+            <thead>
+              <tr>
+                <th scope="col">Qualification</th>
+                <th scope="col">Institution</th>
+                <th scope="col">Score</th>
+                <th scope="col">Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">B.E. Computer Science and Engineering</th>
+                <td>Stanley College of Engineering and Technology for Women</td>
+                <td>8.0 CGPA</td>
+                <td>2027</td>
+              </tr>
+              <tr>
+                <th scope="row">Intermediate (MPC)</th>
+                <td>Narayana Junior College</td>
+                <td>88.1%</td>
+                <td>2023</td>
+              </tr>
+              <tr>
+                <th scope="row">SSC (Class 10)</th>
+                <td>St. Anthony's High School</td>
+                <td>9.7 CGPA</td>
+                <td>2021</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Tools of the trade</p>
+          <h2 id="skills-title" class="section-title">What I <em>work with</em></h2>
+          <p class="section-sub">Pick a category to filter.</p>
+        </header>
+        <div id="skillFilters" class="filter-bar mb-4" role="group" aria-label="Filter skills by category"></div>
+        <ul id="skillGrid" class="skill-grid list-unstyled" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section band-dark" aria-labelledby="proj-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Selected work</p>
+          <h2 id="proj-title" class="section-title">Things I've <em>built</em></h2>
+        </header>
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+          <div id="projectFilters" class="filter-bar" role="group" aria-label="Filter projects by category"></div>
+          <p id="projectCount" class="mb-0 small muted" role="status"></p>
+        </div>
+        <div id="projectGrid" class="row g-4"></div>
+
+        <div class="github-box mt-5">
+          <h3 class="h5">Live from GitHub</h3>
+          <p id="githubStatus" class="mb-2 small muted" role="status">Loading repositories&hellip;</p>
+          <ul id="githubList" class="list-unstyled mb-0"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="achievements" class="section" aria-labelledby="ach-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Achievements &amp; certifications</p>
+          <h2 id="ach-title" class="section-title">Proof of <em>learning</em></h2>
+        </header>
+        <ul class="highlights list-unstyled" data-reveal>
+          <li>2 software and AI internships: CodSoft and Purview India Consulting and Services LLP</li>
+          <li>3 AI projects delivered at CodSoft, plus an LLM loan advisor at Purview</li>
+          <li>9.7 CGPA in SSC and 88.1% in Intermediate (MPC)</li>
+        </ul>
+        <div class="row g-3 align-items-center mb-4">
+          <div class="col-md-5">
+            <label for="certSearch" class="visually-hidden">Search certifications</label>
+            <input id="certSearch" type="search" class="form-control" placeholder="Search certifications&hellip;" autocomplete="off">
+          </div>
+          <div class="col-md-7">
+            <div id="certFilters" class="filter-bar" role="group" aria-label="Filter certifications by issuer"></div>
+          </div>
+        </div>
+        <p id="certCount" class="small muted" role="status"></p>
+        <div id="certGrid" class="row g-3"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section alt" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Get in touch</p>
+          <h2 id="contact-title" class="section-title">Let's <em>talk</em></h2>
+        </header>
+        <div class="letter" data-reveal>
+          <div class="row g-0">
+            <div class="col-lg-5 letter-side">
+              <h3>Dear recruiter,</h3>
+              <p>If something here caught your eye, I'd love to hear from you: internships, projects or just a hello. Send a note with the form, or find me on LinkedIn and GitHub.</p>
+              <p class="sign">Warm regards,<br><em>Lydia</em></p>
+              <address class="contact-list">
+                <p><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/lydiakandula" target="_blank" rel="noopener noreferrer">lydiakandula</a></p>
+                <p><span class="label">GitHub</span><a href="https://github.com/LydiaKandula" target="_blank" rel="noopener noreferrer">LydiaKandula</a></p>
+              </address>
+            </div>
+            <div class="col-lg-7 letter-form">
+              <div id="formAlert" role="alert" aria-live="assertive" tabindex="-1"></div>
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="name" class="form-control" autocomplete="name" required aria-describedby="nameError">
+                    <div id="nameError" class="invalid-feedback"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" autocomplete="email" required aria-describedby="emailError">
+                    <div id="emailError" class="invalid-feedback"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone <span class="muted">(optional)</span></label>
+                    <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel" inputmode="tel" aria-describedby="phoneError">
+                    <div id="phoneError" class="invalid-feedback"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="subject" class="form-label">Subject <span aria-hidden="true">*</span></label>
+                    <select id="subject" name="subject" class="form-select" required aria-describedby="subjectError">
+                      <option value="">Choose&hellip;</option>
+                      <option>Internship opportunity</option>
+                      <option>Project collaboration</option>
+                      <option>General question</option>
+                    </select>
+                    <div id="subjectError" class="invalid-feedback"></div>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" rows="5" class="form-control" required minlength="20" maxlength="500" aria-describedby="messageError messageCount"></textarea>
+                    <div class="d-flex justify-content-between">
+                      <div id="messageError" class="invalid-feedback d-block-if-invalid"></div>
+                      <small id="messageCount" class="muted ms-auto">0 / 500</small>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex gap-2">
+                    <button type="submit" class="btn btn-accent">Send message</button>
+                    <button type="reset" class="btn btn-outline-theme">Clear</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <p class="mb-0">&copy; <span id="year">2026</span> Lydia Kandula</p>
+      <p class="mb-0">Built with HTML5, CSS3, Bootstrap &amp; JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- Project details modal (Bootstrap) -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h4" id="projectModalTitle"></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="projectModalDesc"></p>
+          <h4 class="h6">Highlights</h4>
+          <ul id="projectModalList"></ul>
+          <div id="projectModalTech"></div>
+        </div>
+        <div class="modal-footer">
+          <a id="projectModalLink" class="btn btn-accent" target="_blank" rel="noopener noreferrer" hidden>View code on GitHub</a>
+          <button type="button" class="btn btn-outline-theme" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="backToTop" class="btn btn-accent back-top" type="button" aria-label="Back to top" hidden>&uarr;</button>
+
+  <script src="vendor/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
